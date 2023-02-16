@@ -13,12 +13,12 @@
         "skipLibCheck": true,
         "noEmit": true,
 
-        // If false, get the error with CVA: This is likely not portable. A type annotation is necessary.
-        "preserveSymlinks": true,
-
         "baseUrl": ".",
         "paths": {
-            "@/*": ["./src/*"]
+            "@/*": ["./src/*"],
+
+            // Fix for: https://github.com/microsoft/TypeScript/issues/42873
+            "class-variance-authority": ["node_modules/class-variance-authority"]
         }
     },
     "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "docs/.vitepress/**/*.vue", "docs/.vitepress/**/*.ts"],
