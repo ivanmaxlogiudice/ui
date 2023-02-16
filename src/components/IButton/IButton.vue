@@ -32,7 +32,7 @@ import { ISpinner } from '../ISpinner'
 import { IButtonStyle, type IButtonStyleProps } from './IButton.theme'
 import { buttonGroupKey } from '@/symbols'
 
-export interface IButtonProps {
+interface IButtonProps {
     // eslint-disable-next-line vue/require-default-prop
     color?: IButtonStyleProps['color']
     // eslint-disable-next-line vue/require-default-prop

@@ -16,7 +16,7 @@ specifiers:
   tailwindcss: ^3.2.6
   typescript: ^4.9.5
   vite: ^4.1.1
-  vite-plugin-dts: ^1.7.3
+  vite-plugin-dts: 2.0.0-beta.0
   vitepress: 1.0.0-alpha.46
   vue: ^3.2.47
   vue-tsc: ^1.1.0
@@ -40,7 +40,7 @@ devDependencies:
   tailwindcss: 3.2.6_postcss@8.4.21
   typescript: 4.9.5
   vite: 4.1.1_@types+node@18.13.0
-  vite-plugin-dts: 1.7.3_rgy4fnry75xg7rw6lgswyd3x2m
+  vite-plugin-dts: 2.0.0-beta.0_rgy4fnry75xg7rw6lgswyd3x2m
   vitepress: 1.0.0-alpha.46_@types+node@18.13.0
   vue-tsc: 1.1.0_typescript@4.9.5
 
@@ -580,6 +580,10 @@ packages:
       - eslint-import-resolver-webpack
       - supports-color
       - typescript
+    dev: true
+
+  /@jridgewell/sourcemap-codec/1.4.14:
+    resolution: {integrity: sha512-XPSJHWmi394fuUuzDnGz1wiKqWfo1yXecHQMRf2l6hztTO+nPru658AyDngaBe7isIxEkRsPR3FZh+s7iVa4Uw==}
     dev: true
 
   /@microsoft/api-extractor-model/7.26.4_@types+node@18.13.0:
@@ -2785,6 +2789,13 @@ packages:
     dependencies:
       sourcemap-codec: 1.4.8
 
+  /magic-string/0.29.0:
+    resolution: {integrity: sha512-WcfidHrDjMY+eLjlU+8OvwREqHwpgCeKVBUpQ3OhYYuvfaYCUgcbuBzappNzZvg/v8onU3oQj+BYpkOJe9Iw4Q==}
+    engines: {node: '>=12'}
+    dependencies:
+      '@jridgewell/sourcemap-codec': 1.4.14
+    dev: true
+
   /markdown-it-container/3.0.0:
     resolution: {integrity: sha512-y6oKTq4BB9OQuY/KLfk/O3ysFhB3IMYoIWhGJEidXt1NQFocFK2sA2t0NYZAMyMShAGL6x5OPIbrmXPIqaN9rw==}
     dev: true
@@ -3636,12 +3647,13 @@ packages:
     engines: {node: '>= 0.10'}
     dev: true
 
-  /vite-plugin-dts/1.7.3_rgy4fnry75xg7rw6lgswyd3x2m:
-    resolution: {integrity: sha512-u3t45p6fTbzUPMkwYe0ESwuUeiRMlwdPfD3dRyDKUwLe2WmEYcFyVp2o9/ke2EMrM51lQcmNWdV9eLcgjD1/ng==}
+  /vite-plugin-dts/2.0.0-beta.0_rgy4fnry75xg7rw6lgswyd3x2m:
+    resolution: {integrity: sha512-5hl+Fz9fBn/1b3sf1fXUiJTkhM3BtugNSMtqJWyxAcV6ZBAglYpEhwWyX+6d4QaB9vFCs5FBsmKAWDGBB+hnUA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       vite: '>=2.9.0'
     dependencies:
+      '@babel/parser': 7.20.15
       '@microsoft/api-extractor': 7.34.4_@types+node@18.13.0
       '@rollup/pluginutils': 5.0.2
       '@rushstack/node-core-library': 3.55.2_@types+node@18.13.0
@@ -3649,6 +3661,7 @@ packages:
       fast-glob: 3.2.12
       fs-extra: 10.1.0
       kolorist: 1.7.0
+      magic-string: 0.29.0
       ts-morph: 17.0.1
       vite: 4.1.1_@types+node@18.13.0
     transitivePeerDependencies:
