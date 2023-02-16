@@ -1,18 +1,27 @@
-# Vue 3 + TypeScript + Vite
+<h1 align="center">
+    <a href="https://ivanmaxlogiudice.github.io/ui/" target="_blank" align="center">
+        @ivanmaxlogiudice/ui
+    </a>
+</h1>
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+<p align="center">
+    <img src="https://img.shields.io/npm/v/@ivanmaxlogiudice/ui?color=blue">
+    <img src="https://img.shields.io/npm/l/@ivanmaxlogiudice/ui">
+    <img src="https://img.shields.io/npm/dw/@ivanmaxlogiudice/ui">
+    <img src="https://img.badgesize.io/https:/unpkg.com/@ivanmaxlogiudice/ui/?label=Brotli%20size%3A%20JS&compression=brotli">
+</p>
 
-## Recommended IDE Setup
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Features ✨
+- 🥳 **DX Focused** - Use bare minimum code to build great UI
+- 🦾**TypeScript** - Support type check
+- 🌳 **Tree Shakable** - Import only the components that you need without worry about the size
+- 🌜 **Dark Theme** - Built-in dark theme
 
-## Type Support For `.vue` Imports in TS
+## Installation 🛠️
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+Please refer to the [docs](https://ivanmaxlogiudice.github.io/ui/guide/getting-started/installation)
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+## LICENSE
 
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+[MIT](./LICENSE) License © 2023 - Present [Iván Máximiliano, Lo Giudice](https://github.com/ivanmaxlogiudice)
