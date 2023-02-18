@@ -1,5 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const preset = require('./tailwind.preset.cjs')
+const preset = require('./src/exports/tailwind.preset.cjs')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
