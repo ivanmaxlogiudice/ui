@@ -91,6 +91,17 @@ INFO: The `loading` slot has higher priority than `loadingIcon` prop.
 
 ::::
 
+<!-- 👉 Icons -->
+::::card ### Icons
+
+Use the `icon` slot or `icon` prop to add more meaning to the button.
+
+:::code DemoButtonIcon
+<<< @/components/demos/IButton/DemoButtonIcon.vue
+:::
+
+::::
+
 <!-- 👉 Disabled -->
 ::::card ### Disabled
 
@@ -115,24 +126,28 @@ The `fullWidth` prop to make a block button.
 
 ## Props
 
-| Prop          | Description                               | Accepted Values                                                                          | Default     |
-| :------------ | :---------------------------------------- | :--------------------------------------------------------------------------------------- | :---------- |
-| `color`       | The color of the button.                  | `default` `primary` `success` `info` `warning` `danger`                                  | `default`   |
-| `variant`     | The variant of the button.                | `solid` `outline` `text` `link`                                                          | `solid`     |
-| `size`        | The size of the button.                   | `xs` `sm` `md` `lg` `xl`                                                                 | `md`        |
-| `rounded`     | Rounded corners.                          | `Boolean`                                                                                | `false`     |
-| `fullWidth`   | Take full width.                          | `Boolean`                                                                                | `false`     |
-| `to`          | The destination for a router link.        | `String` <code>[RouteLocationRaw](https://router.vuejs.org/api/#routelocationraw)</code> | `undefined` |
-| `href`        | The destination for a regular link.       | `String`                                                                                 | `undefined` |
-| `type`        | The HTML type attribute of the button.    | `submit` `reset` `button`                                                                | `button`    |
-| `loading`     | Whether the button is in a loading state. | `Boolean`                                                                                | `false`     |
-| `loadingIcon` | Custom loading icon component.            | `Component`                                                                              | `undefined` |
-| `loadingText` | Label to show with the loading state.     | `String`                                                                                 | `undefined` |
-| `disabled`    | Whether the button is disabled.           | `Boolean`                                                                                | `false`     |
+| Prop          | Description                                  | Accepted Values                                         | Default     |
+| :------------ | :------------------------------------------- | :------------------------------------------------------ | :---------- |
+| `color`       | The color of the button.                     | `default` `primary` `success` `info` `warning` `danger` | `default`   |
+| `variant`     | The variant of the button.                   | `solid` `outline` `text` `link`                         | `solid`     |
+| `size`        | The size of the button.                      | `xs` `sm` `md` `lg` `xl`                                | `md`        |
+| `rounded`     | Rounded corners.                             | `Boolean`                                               | `false`     |
+| `fullWidth`   | Take full width.                             | `Boolean`                                               | `false`     |
+| `to`          | The destination for a router link.           | `String` `Record<string, unknown>`                      | `undefined` |
+| `href`        | The destination for a regular link.          | `String`                                                | `undefined` |
+| `type`        | The HTML type attribute of the button.       | `submit` `reset` `button`                               | `button`    |
+| `icon`        | Add more meaning to the button with an icon. | `Component`                                             | `undefined` |
+| `loading`     | Whether the button is in a loading state.    | `Boolean`                                               | `false`     |
+| `loadingIcon` | Custom loading icon component.               | `Component`                                             | `undefined` |
+| `loadingText` | Label to show with the loading state.        | `String`                                                | `undefined` |
+| `disabled`    | Whether the button is disabled.              | `Boolean`                                               | `false`     |
+
 
 ## Slots
 
-| Name    | Description                                                                |
-| :------ | :------------------------------------------------------------------------- |
-| default | Default slot for button's content.                                         |
-| loading | Slot for loading state. Slot scope properties available: `{ loadingText }` |
+| Name    | Description                                                                 |
+| :------ | :-------------------------------------------------------------------------- |
+| default | Default slot for button's content.                                          |
+| loading | Slot for loading state. Slot scope properties available: `{ loadingText }`. |
+| icon    | Slot for button prefix icon                                                 |
+

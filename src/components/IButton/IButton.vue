@@ -1,5 +1,5 @@
 <template>
-    <Component
+    <component
         :is="as"
         :href="hrefValue"
         :to="to"
@@ -9,21 +9,25 @@
         :aria-disabled="_disabled || loading || undefined"
     >
         <template v-if="loading">
-            <span>
-                <slot name="loading" :loading-text="loadingText">
-                    <component :is="loadingIcon ?? ISpinner" class="h-[1.25em] w-[1.25em]" />
-                </slot>
-            </span>
+            <slot name="loading" :loading-text="loadingText">
+                <component :is="loadingIcon ?? ISpinner" class="h-[1.25em] w-[1.25em]" />
 
-            <span v-if="loadingText">
-                {{ loadingText }}
-            </span>
+                <span v-if="loadingText">
+                    {{ loadingText }}
+                </span>
+            </slot>
+        </template>
+
+        <template v-else-if="icon || $slots.icon">
+            <slot name="icon">
+                <component :is="icon" class="h-[1.25em] w-[1.25em]" />
+            </slot>
         </template>
 
         <span v-if="$slots.default && !(loading && loadingText)">
             <slot />
         </span>
-    </Component>
+    </component>
 </template>
 
 <script lang="ts" setup>
@@ -33,19 +37,17 @@ import { IButtonStyle, type IButtonStyleProps } from './IButton.theme'
 import { buttonGroupKey } from '@/symbols'
 
 interface IButtonProps {
-    // eslint-disable-next-line vue/require-default-prop
     color?: IButtonStyleProps['color']
-    // eslint-disable-next-line vue/require-default-prop
     variant?: IButtonStyleProps['variant']
-    // eslint-disable-next-line vue/require-default-prop
     size?: IButtonStyleProps['size']
 
     type?: ButtonHTMLAttributes['type']
 
     fullWidth?: boolean
     rounded?: boolean
-    to?: string
+    to?: string | Record<string, unknown>
     href?: string
+    icon?: Component
     loading?: boolean
     loadingIcon?: Component
     loadingText?: string
@@ -54,12 +56,6 @@ interface IButtonProps {
 
 const props = withDefaults(defineProps<IButtonProps>(), {
     type: 'button',
-
-    to: undefined,
-    href: undefined,
-    loadingIcon: undefined,
-    loadingText: undefined,
-    disabled: undefined,
 })
 
 const buttonGroupContext = inject(buttonGroupKey, {})

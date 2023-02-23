@@ -74,6 +74,17 @@ Use the `vertical` to make the buttons be displayed vertically.
 
 ::::
 
+<!-- 👉 With Icon -->
+::::card ### With Icon
+
+Use icons to add more meaning to the button.
+
+:::code DemoButtonGroupIcon
+<<< @/components/demos/IButtonGroup/DemoButtonGroupIcon.vue
+:::
+
+::::
+
 <!-- 👉 Disabled -->
 ::::card ### Disabled
 
