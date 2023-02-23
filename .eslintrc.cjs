@@ -22,4 +22,8 @@ module.exports = {
             },
         },
     ],
+    rules: {
+        'vue/require-default-prop': 'off',
+        '@typescript-eslint/consistent-type-imports': ['error', { fixStyle: 'inline-type-imports' }],
+    },
 }
