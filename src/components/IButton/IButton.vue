@@ -10,7 +10,7 @@
     >
         <template v-if="loading">
             <slot name="loading" :loading-text="loadingText">
-                <component :is="loadingIcon ?? ISpinner" class="h-[1.25em] w-[1.25em]" />
+                <component :is="loadingIcon ?? ISpinner" />
 
                 <span v-if="loadingText">
                     {{ loadingText }}
@@ -20,7 +20,7 @@
 
         <template v-else-if="icon || $slots.icon">
             <slot name="icon">
-                <component :is="icon" class="h-[1.25em] w-[1.25em]" />
+                <component :is="icon" />
             </slot>
         </template>
 

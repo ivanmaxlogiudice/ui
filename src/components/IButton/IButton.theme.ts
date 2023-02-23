@@ -1,7 +1,7 @@
 /* eslint-disable tailwindcss/no-custom-classname */
 import { type VariantProps, cva } from 'class-variance-authority'
 
-export const IButtonStyle = cva('relative inline-flex select-none appearance-none items-center justify-center space-x-2 whitespace-nowrap font-medium leading-none tracking-wide transition duration-300 focus:shadow-focus focus:outline-none active:shadow-none', {
+export const IButtonStyle = cva('relative inline-flex select-none appearance-none items-center justify-center space-x-2 whitespace-nowrap font-medium leading-none tracking-wide transition duration-300 focus:shadow-focus focus:outline-none active:shadow-none [&>svg]:h-[1.25em] [&>svg]:w-[1.25em]', {
     variants: {
         color: {
             default: 'enabled:focus:shadow-gray-400/20',
