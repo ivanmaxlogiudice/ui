@@ -19,7 +19,9 @@
 
             // Fix for: https://github.com/microsoft/TypeScript/issues/42873
             "class-variance-authority": ["node_modules/class-variance-authority"]
-        }
+        },
+
+        "types": ["unplugin-vue-define-options/macros-global"]
     },
     "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "docs/.vitepress/**/*.vue", "docs/.vitepress/**/*.ts"],
     "references": [{ "path": "./tsconfig.node.json" }]

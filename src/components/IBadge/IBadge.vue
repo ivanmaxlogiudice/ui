@@ -20,9 +20,9 @@ import { computed } from 'vue'
 import { IBadgeStyle, type IBadgeStyleProps } from './IBadge.theme'
 
 interface IBadgeProps {
-    show: boolean
+    show?: boolean
     value?: number | string
-    max: number
+    max?: number
 
     color?: IBadgeStyleProps['color']
     position?: IBadgeStyleProps['position']
@@ -34,6 +34,10 @@ const props = withDefaults(defineProps<IBadgeProps>(), {
     show: true,
     max: 99,
     position: 'top-right',
+})
+
+defineOptions({
+    inheritAttrs: false,
 })
 
 const formatedValue = computed(() => props.dot ? '' : (Number(props.value) > props.max) ? `${props.max}+` : props.value)

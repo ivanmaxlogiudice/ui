@@ -1,5 +1,6 @@
 import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vitepress'
+import DefineOptions from 'unplugin-vue-define-options/vite'
 import { mdPlugin } from './configs/plugins'
 
 const nav = [
@@ -31,6 +32,10 @@ export default defineConfig({
             },
             dedupe: ['vue'],
         },
+
+        plugins: [
+            DefineOptions(),
+        ],
     },
 
     themeConfig: {
