@@ -9,6 +9,7 @@ const nav = [
 const components = [
     { text: 'Button', link: '/guide/components/button' },
     { text: 'Button Group', link: '/guide/components/button-group' },
+    { text: 'Badge', link: '/guide/components/badge' },
 ]
 
 export default defineConfig({
