@@ -1,26 +1,33 @@
 <!-- eslint-disable vue/singleline-html-element-content-newline -->
 <template>
     <div class="relative flex max-w-4xl space-x-6 p-10">
-        <div class="flex items-center space-x-6">
-            <div class="space-x-2">
-                <IBadge :show="show" :shape="shape" :color="color" :dot="dot" :position="position" :value="9" />
-                <IBadge :show="show" :shape="shape" :color="color" :dot="dot" :position="position" :value="99" />
-                <IBadge :show="show" :shape="shape" :color="color" :dot="dot" :position="position" :value="999" />
+        <div class="flex flex-col items-center gap-4">
+            <div class="flex items-center justify-center gap-2">
+                <ITag :closable="closable" :size="size" color="default">Default</ITag>
+                <ITag :closable="closable" :size="size" color="primary">Primary</ITag>
+                <ITag :closable="closable" :size="size" color="success">Success</ITag>
+                <ITag :closable="closable" :size="size" color="info">Info</ITag>
+                <ITag :closable="closable" :size="size" color="warning">Warning</ITag>
+                <ITag :closable="closable" :size="size" color="danger">Danger</ITag>
             </div>
 
-            <div>
-                <IBadge :show="show" :shape="shape" :color="color" :dot="dot" :position="position" :value="5">
-                    <IButton>Button</IButton>
-                </IBadge>
+            <div class="flex items-center justify-center gap-2">
+                <ITag :closable="closable" :size="size" variant="outline" color="default">Default</ITag>
+                <ITag :closable="closable" :size="size" variant="outline" color="primary">Primary</ITag>
+                <ITag :closable="closable" :size="size" variant="outline" color="success">Success</ITag>
+                <ITag :closable="closable" :size="size" variant="outline" color="info">Info</ITag>
+                <ITag :closable="closable" :size="size" variant="outline" color="warning">Warning</ITag>
+                <ITag :closable="closable" :size="size" variant="outline" color="danger">Danger</ITag>
             </div>
         </div>
 
         <div>
             <div>show <input v-model="show" type="checkbox" /></div>
-            <div>dot <input v-model="dot" type="checkbox" /></div>
+            <div>closable <input v-model="closable" type="checkbox" /></div>
             <div>
                 color
                 <select v-model="color">
+                    <option value="default">default</option>
                     <option value="primary">primary</option>
                     <option value="success">success</option>
                     <option value="info">info</option>
@@ -29,12 +36,19 @@
                 </select>
             </div>
             <div>
-                position:
-                <select v-model="position">
-                    <option value="top-right">top-right</option>
-                    <option value="top-left">top-left</option>
-                    <option value="bottom-right">bottom-right</option>
-                    <option value="bottom-left">bottom-left</option>
+                variant
+                <select v-model="variant">
+                    <option value="solid">solid</option>
+                    <option value="outline">outline</option>
+                </select>
+            </div>
+            <div>
+                size
+                <select v-model="size">
+                    <option value="xs">xs</option>
+                    <option value="sm">sm</option>
+                    <option value="md">md</option>
+                    <option value="lg">lg</option>
                 </select>
             </div>
             <div>
@@ -54,14 +68,15 @@
 
 <script lang="ts" setup>
 import { ref, watch } from 'vue'
-import { IBadge, IButton } from './components'
+import { ITag } from './components'
 
 const checked = ref(false)
 
 const show = ref(true)
-const dot = ref(false)
-const color = ref<'primary' | 'success' | 'info' | 'warning' | 'danger'>('primary')
-const position = ref<'top-right' | 'top-left' | 'bottom-right' | 'bottom-left'>('top-right')
+const closable = ref(false)
+const color = ref<'default' | 'primary' | 'success' | 'info' | 'warning' | 'danger'>('default')
+const variant = ref<'solid' | 'outline'>('solid')
+const size = ref<'xs' | 'sm' | 'md' | 'lg'>('sm')
 const shape = ref<'rounded' | 'square'>('rounded')
 
 // On page load or when changing themes, best to add inline in `head` to avoid FOUC
