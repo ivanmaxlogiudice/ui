@@ -11,6 +11,7 @@ const components = [
     { text: 'Button', link: '/guide/components/button' },
     { text: 'Button Group', link: '/guide/components/button-group' },
     { text: 'Badge', link: '/guide/components/badge' },
+    { text: 'Tag', link: '/guide/components/tag' },
 ]
 
 export default defineConfig({
