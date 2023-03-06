@@ -23,6 +23,16 @@
 
         "types": ["unplugin-vue-define-options/macros-global"]
     },
-    "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "docs/.vitepress/**/*.vue", "docs/.vitepress/**/*.ts"],
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.d.ts",
+        "src/**/*.tsx",
+        "src/**/*.vue",
+
+        "volar.d.ts",
+
+        "docs/.vitepress/**/*.vue",
+        "docs/.vitepress/**/*.ts"
+    ],
     "references": [{ "path": "./tsconfig.node.json" }]
 }
