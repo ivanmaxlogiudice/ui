@@ -48,13 +48,48 @@ module.exports = {
 } // [!code focus]
 ```
 
-:::warning
-Please keep in mind, that the components are not registered globally, you still need to import the components per page basis or where you need them, this is done by design.
+## 3. Usage
+
+After installation, you have many ways to consume the library.
+
+### On-demand import
+
+You need to use the [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components) plugin that allow you to auto import the components that you use.
+
+::: code-group
+
+```bash [pnpm]
+pnpm add -D unplugin-vue-components
+```
+
+```bash [npm]
+npm add -D unplugin-vue-components
+```
+
+```bash [yarn]
+yarn add -D unplugin-vue-components
+```
+
 :::
 
-## 3. Basic Usage
+Then add the following to your `vite.config.ts` file.
 
-After installation, you may import the components as you need them.
+```ts
+import Components from 'unplugin-vue-components/vite'
+import { IUIResolver } from '@ivanmaxlogiudice/ui'
+
+export default defineConfig({
+    plugins: [
+        Components({
+            resolvers: [IUIResolver()]
+        })
+    ]
+})
+```
+
+### Tree Shaking
+
+You can import the components individually from `@ivanmaxlogiudice/ui`.
 
 ```vue
 <template>
@@ -64,4 +99,33 @@ After installation, you may import the components as you need them.
 <script setup lang="ts">
 import { IButton } from '@ivanmaxlogiudice/ui' // [!code focus]
 </script>
+```
+
+### Full Import
+
+You can full import all the components in your app.
+
+Add `IUI` to your main entry file.
+
+```ts
+// main.ts
+...
+import IUI from '@ivanmaxlogiudice/ui'
+
+createApp(App).use(IUI).mount('#app')
+```
+
+## Volar Support
+
+You can add the `IUI` global component type definition to your `tsconfig.json` file. 
+Then [volar](https://github.com/vuejs/language-tools) will help you have a better experience while coding.
+
+```json
+// tsconfig.json
+{
+    "compilerOptions": {
+        // ...
+        "types": ["@ivanmaxlogiudice/ui/volar"]
+    }
+}
 ```
